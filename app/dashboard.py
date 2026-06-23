@@ -354,7 +354,7 @@ elif page == "📊 Screener":
             return f"color:#{fg};background:#{bg};border:1px solid #{bd};font-weight:600;border-radius:12px;padding:2px 10px;"
         return ""
     st.dataframe(
-        filtered.style.applymap(color_sig, subset=["Signal"])
+        filtered.style.map(color_sig, subset=["Signal"])
                       .format({"Confidence":"{:.1f}%","Close":"${:.2f}","RSI":"{:.1f}","Volatility":"{:.1f}%"}),
         use_container_width=True, hide_index=True)
 
